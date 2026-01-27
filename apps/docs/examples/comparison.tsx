@@ -13,6 +13,7 @@ const Example = () => (
         src="https://placehold.co/1920x1080?random=1"
         unoptimized
         width={1920}
+        draggable={false}
       />
     </ComparisonItem>
     <ComparisonItem className="bg-blue-500" position="right">
@@ -23,6 +24,7 @@ const Example = () => (
         src="https://placehold.co/2560x1440?random=2"
         unoptimized
         width={2560}
+        draggable={false}
       />
     </ComparisonItem>
     <ComparisonHandle />
