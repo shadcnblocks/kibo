@@ -8,6 +8,7 @@ import {
 } from "fumadocs-ui/page";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { BlocksCta } from "../../../components/blocks-cta";
 import { Installer } from "../../../components/installer";
 import { PoweredBy } from "../../../components/powered-by";
 import { Preview } from "../../../components/preview";
@@ -77,6 +78,7 @@ const Page = async (props: PageProps) => {
             PoweredBy,
           }}
         />
+        {type === "block" && <BlocksCta category={page.data.title} />}
       </DocsBody>
     </DocsPage>
   );

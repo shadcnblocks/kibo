@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "^10.0.0",
+    "@hookform/resolvers": "^5.2.2",
     "@icons-pack/react-simple-icons": "^13.8.0",
     "@logtail/next": "^0.2.1",
     "@modelcontextprotocol/sdk": "^1.20.0",
@@ -75,6 +76,7 @@
     "postcss-nested": "^7.0.2",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
+    "react-hook-form": "^7.65.0",
     "react-player": "^3.3.3",
     "react-tweet": "^3.2.2",
     "recharts": "^2.15.4",
