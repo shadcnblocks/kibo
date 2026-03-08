@@ -3,7 +3,7 @@
 import { Button } from "@repo/shadcn-ui/components/ui/button";
 import { Kbd } from "@repo/shadcn-ui/components/ui/kbd";
 import { cn } from "@repo/shadcn-ui/lib/utils";
-import { useSearchContext } from "fumadocs-ui/provider";
+import { useSearchContext } from "fumadocs-ui/contexts/search";
 import { SearchIcon } from "lucide-react";
 
 type SearchProps = {
