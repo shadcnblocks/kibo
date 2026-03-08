@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@repo/shadcn-ui/components/ui/button";
-import { useSearchContext } from "fumadocs-ui/provider";
+import { useSearchContext } from "fumadocs-ui/contexts/search";
 import { SearchIcon } from "lucide-react";
 
 export const MobileSearch = () => {

@@ -1,7 +1,7 @@
 import { Button } from "@repo/shadcn-ui/components/ui/button";
 import { MenuIcon } from "lucide-react";
 import Link from "next/link";
-import { docs, meta } from "@/.source";
+import { docs, meta } from "fumadocs-mdx:collections/server";
 import {
   Drawer,
   DrawerClose,

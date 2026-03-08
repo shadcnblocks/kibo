@@ -178,8 +178,16 @@
 }
 
 :root {
-  --fd-page-width: 100%;
+  --fd-layout-width: 100%;
+  --fd-sidebar-width: 240px;
+  --fd-toc-width: 240px;
+  --fd-banner-height: var(--nav-height);
 }
+
+#nd-page {
+  margin-top: calc(var(--nav-height) - 19px);
+}
+
 
 .landing-page #nd-docs-layout {
   @apply pl-0!;

@@ -1,11 +1,11 @@
-import type { TableOfContents } from "fumadocs-core/server";
+import type { TableOfContents } from "fumadocs-core/toc";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import {
   DocsBody,
   DocsDescription,
   DocsPage,
   DocsTitle,
-} from "fumadocs-ui/page";
+} from "fumadocs-ui/layouts/docs/page";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BlocksCta } from "../../../components/blocks-cta";
@@ -42,15 +42,10 @@ const Page = async (props: PageProps) => {
     ...page.data.toc,
   ];
 
-  const type = page.data.info.path.startsWith("blocks")
-    ? "block"
-    : "component";
+  const type = page.data.info.path.startsWith("blocks") ? "block" : "component";
 
   return (
     <DocsPage
-      container={{
-        className: 'max-w-[75rem]'
-      }}
       full={page.data.full ?? page.slugs.includes("blocks")}
       tableOfContent={{
         style: "clerk",
@@ -130,7 +125,7 @@ export const generateMetadata = async (props: {
         },
       ],
       card: "summary_large_image",
-    }
+    },
   };
 };
 

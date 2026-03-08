@@ -20,7 +20,7 @@ const DocsRootLayout = ({ children }: DocsRootLayoutProps) => (
       sidebar={{
         collapsible: false,
         tabs: false,
-        className: 'border-none',
+        className: "border-none",
       }}
       themeSwitch={{
         enabled: false,
