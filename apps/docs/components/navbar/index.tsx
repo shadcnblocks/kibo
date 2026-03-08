@@ -8,6 +8,7 @@ import { Logo } from "./logo";
 import { MobileMenu } from "./mobile-menu";
 import { MobileSearch } from "./mobile-search";
 import { Search } from "./search";
+import { ShadcnBlocks } from "./shadcnblocks";
 
 const componentsCount = source
   .getPages()
@@ -39,6 +40,7 @@ export const Navbar = () => (
 
     <div className="hidden items-center gap-3 md:flex">
       <Search />
+      <ShadcnBlocks />
       <GitHub />
     </div>
 

@@ -51,7 +51,7 @@ export const Hero = () => (
     style={{
       backgroundColor: "var(--background)",
       backgroundImage:
-        "radial-gradient(at 81% 100%, var(--color-pink-300) 0px, transparent 50%), radial-gradient(at 19% 100%, var(--color-purple-300) 0px, transparent 50%)",
+        "radial-gradient(at 81% 100%, var(--color-primary) 0px, transparent 50%), radial-gradient(at 19% 100%, var(--color-primary) 0px, transparent 50%)",
     }}
   >
     <div className="pointer-events-none absolute right-0 bottom-0 left-0 select-none border-background/15 border-t">

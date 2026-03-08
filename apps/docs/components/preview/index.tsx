@@ -26,11 +26,11 @@ export const Preview = async ({
 }: PreviewProps) => {
   const code = await readFile(
     join(process.cwd(), "examples", `${path}.tsx`),
-    "utf-8"
+    "utf-8",
   );
 
   const Component = await import(`../../examples/${path}.tsx`).then(
-    (module) => module.default
+    (module) => module.default,
   );
 
   const parsedCode = code
@@ -40,7 +40,7 @@ export const Preview = async ({
     // Remove typography import
     .replace(
       /^import\s+["']@\/components\/ui\/kibo-ui\/typography["'];?\n?/gm,
-      ""
+      "",
     );
 
   const sourceComponentNames =
@@ -58,7 +58,7 @@ export const Preview = async ({
     try {
       const source = await readFile(
         join(process.cwd(), "..", "..", "packages", fileName),
-        "utf-8"
+        "utf-8",
       );
 
       if (sourceComponents.some((s) => s.name === component)) {
@@ -74,10 +74,10 @@ export const Preview = async ({
   return (
     <div
       className={cn(
-        "size-full overflow-hidden rounded-lg border bg-background",
+        "size-full overflow-hidden rounded-lg border bg-background not-prose",
         type === "block" && "h-[48rem] prose-code:border-none prose-code:p-0",
-        type === "component" && "not-prose h-[32rem]",
-        className
+        type === "component" && " h-[32rem]",
+        className,
       )}
     >
       <Tabs className="size-full gap-0" defaultValue="preview">
@@ -114,7 +114,7 @@ export const Preview = async ({
         <TabsContent
           className={cn(
             "not-fumadocs-codeblock size-full",
-            type === "component" ? "overflow-hidden" : "overflow-auto"
+            type === "component" ? "overflow-hidden" : "overflow-auto",
           )}
           value="preview"
         >

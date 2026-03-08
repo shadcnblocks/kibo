@@ -190,6 +190,7 @@
 
 
 .landing-page #nd-docs-layout {
+  --fd-sidebar-width: 0px;
   @apply pl-0!;
 }
 

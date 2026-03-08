@@ -7,7 +7,7 @@ import { Patterns } from "./components/patterns";
 import { Tweets } from "./components/tweets";
 
 const Home = () => (
-  <div className="mt-[var(--fd-nav-height)] grid w-full gap-16 p-4 sm:gap-24">
+  <div className="mx-auto mt-[var(--fd-nav-height)] grid max-w-7xl gap-16 p-4 sm:gap-24">
     <Hero />
     <Components />
     <Blocks />
