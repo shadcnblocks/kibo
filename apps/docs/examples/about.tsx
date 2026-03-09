@@ -238,5 +238,5 @@ const defaultProps = {
 
 // Based on https://shadcnblocks.com/block/about3
 export default function AboutExample() {
-  return <About3 />;
+  return <About3 {...defaultProps} />;
 }

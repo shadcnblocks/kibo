@@ -3,8 +3,8 @@ import { cn } from "@repo/shadcn-ui/lib/utils";
 import { Button } from "@repo/shadcn-ui/components/ui/button";
 
 interface Cta10Props {
-  heading: string;
-  description: string;
+  heading?: string;
+  description?: string;
   buttons?: {
     primary?: {
       text: string;
