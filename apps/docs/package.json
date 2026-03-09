@@ -72,6 +72,7 @@
     "mcp-handler": "^1.0.7",
     "motion": "^12.35.1",
     "next": "16.1.6",
+    "next-plausible": "^3.12.5",
     "next-themes": "^0.4.6",
     "postcss-nested": "^7.0.2",
     "react": "^19.2.4",

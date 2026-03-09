@@ -4,6 +4,7 @@ import { TooltipProvider } from "@repo/shadcn-ui/components/ui/tooltip";
 import { cn } from "@repo/shadcn-ui/lib/utils";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { RootProvider } from "fumadocs-ui/provider/next";
+import PlausibleProvider from "next-plausible";
 import type { ReactNode } from "react";
 import { ThemeProvider } from "@/providers/theme";
 import { mono, sans } from "../lib/fonts";
@@ -17,19 +18,22 @@ const Layout = ({ children }: LayoutProps) => (
     className={cn(
       "touch-manipulation font-sans antialiased",
       sans.variable,
-      mono.variable
+      mono.variable,
     )}
     lang="en"
     suppressHydrationWarning
   >
+    <head />
     <body className="flex min-h-screen flex-col">
-      <ThemeProvider>
-        <RootProvider>
-          <TooltipProvider>{children}</TooltipProvider>
-        </RootProvider>
-        <VercelAnalytics />
-      </ThemeProvider>
-      <Toaster />
+      <PlausibleProvider domain="kibo-ui.com">
+        <ThemeProvider>
+          <RootProvider>
+            <TooltipProvider>{children}</TooltipProvider>
+          </RootProvider>
+          <VercelAnalytics />
+        </ThemeProvider>
+        <Toaster />
+      </PlausibleProvider>
     </body>
   </html>
 );
