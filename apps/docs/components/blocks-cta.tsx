@@ -29,7 +29,6 @@ export const BlocksCta = ({ category }: BlocksCtaProps) => {
         <a
           className="inline-flex items-center gap-1.5 font-medium text-primary transition-colors hover:text-primary/80"
           href={href}
-          rel="noopener"
           target="_blank"
         >
           Shadcnblocks {category} blocks

@@ -59,6 +59,7 @@ const Cta10 = ({
   );
 };
 
-const Example = () => <Cta10 />;
-
-export default Example;
+// Based on https://shadcnblocks.com/block/cta10
+export default function CtaExample() {
+  return <Cta10 />;
+}

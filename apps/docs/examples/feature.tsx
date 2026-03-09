@@ -132,6 +132,6 @@ const Feature = ({
 };
 
 // Based on https://shadcnblocks.com/block/feature197
-const Example = () => <Feature />;
-
-export default Example;
+export default function FeatureExample() {
+  return <Feature />;
+}

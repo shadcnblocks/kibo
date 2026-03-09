@@ -240,6 +240,9 @@ importers:
       react-hook-form:
         specifier: ^7.65.0
         version: 7.65.0(react@19.2.4)
+      react-icons:
+        specifier: ^5.5.0
+        version: 5.5.0(react@19.2.4)
       react-player:
         specifier: ^3.4.0
         version: 3.4.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -14704,6 +14707,10 @@ snapshots:
   react-icons@5.5.0(react@19.2.0):
     dependencies:
       react: 19.2.0
+
+  react-icons@5.5.0(react@19.2.4):
+    dependencies:
+      react: 19.2.4
 
   react-image-crop@11.0.10(react@19.2.0):
     dependencies:

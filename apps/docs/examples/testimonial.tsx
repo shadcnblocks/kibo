@@ -56,6 +56,7 @@ const Testimonial10 = ({
   );
 };
 
-const Example = () => <Testimonial10 />;
-
-export default Example;
+// Based on https://shadcnblocks.com/block/testimonial10
+export default function TestimonialExample() {
+  return <Testimonial10 />;
+}

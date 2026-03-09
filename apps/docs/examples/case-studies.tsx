@@ -32,7 +32,7 @@ const CaseStudies2 = ({ className }: CaseStudies2Props) => {
                 </q>
                 <div className="flex items-end gap-6">
                   <div className="flex flex-col gap-1">
-                    <p className="text-lg font-semibold text-primary">
+                    <p className="text-lg font-semibold text-foreground">
                       Michael Rivera
                     </p>
                     <p className="text-muted-foreground">Product Director</p>
@@ -46,19 +46,19 @@ const CaseStudies2 = ({ className }: CaseStudies2Props) => {
             </div>
             <div className="flex gap-10 self-center lg:flex-col">
               <div className="flex flex-col gap-2">
-                <p className="text-4xl font-medium text-primary sm:text-5xl">
+                <p className="text-4xl font-medium text-foreground sm:text-5xl">
                   98%
                 </p>
-                <p className="font-semibold text-primary">
+                <p className="font-semibold text-foreground">
                   Customer Satisfaction
                 </p>
                 <p className="text-muted-foreground">From verified reviews</p>
               </div>
               <div className="flex flex-col gap-2">
-                <p className="text-4xl font-medium text-primary sm:text-5xl">
+                <p className="text-4xl font-medium text-foreground sm:text-5xl">
                   3.8x
                 </p>
-                <p className="font-semibold text-primary">ROI Improvement</p>
+                <p className="font-semibold text-foreground">ROI Improvement</p>
                 <p className="text-muted-foreground">Within first quarter</p>
               </div>
             </div>
@@ -79,7 +79,7 @@ const CaseStudies2 = ({ className }: CaseStudies2Props) => {
                 </q>
                 <div className="flex items-end gap-6">
                   <div className="flex flex-col gap-1">
-                    <p className="text-lg font-semibold text-primary">
+                    <p className="text-lg font-semibold text-foreground">
                       Sarah Chen
                     </p>
                     <p className="text-muted-foreground">Operations Lead</p>
@@ -93,19 +93,21 @@ const CaseStudies2 = ({ className }: CaseStudies2Props) => {
             </div>
             <div className="flex gap-10 self-center lg:flex-col">
               <div className="flex flex-col gap-2">
-                <p className="text-4xl font-medium text-primary sm:text-5xl">
+                <p className="text-4xl font-medium text-foreground sm:text-5xl">
                   4.2x
                 </p>
-                <p className="font-semibold text-primary">Team Efficiency</p>
+                <p className="font-semibold text-foreground">Team Efficiency</p>
                 <p className="text-muted-foreground">
                   Proven productivity gains
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <p className="text-4xl font-medium text-primary sm:text-5xl">
+                <p className="text-4xl font-medium text-foreground sm:text-5xl">
                   72%
                 </p>
-                <p className="font-semibold text-primary">Reduced Task Time</p>
+                <p className="font-semibold text-foreground">
+                  Reduced Task Time
+                </p>
                 <p className="text-muted-foreground">Across all projects</p>
               </div>
             </div>
@@ -116,6 +118,7 @@ const CaseStudies2 = ({ className }: CaseStudies2Props) => {
   );
 };
 
-const Example = () => <CaseStudies2 />;
-
-export default Example;
+// Based on https://shadcnblocks.com/block/case-studies2
+export default function CaseStudiesExample() {
+  return <CaseStudies2 />;
+}

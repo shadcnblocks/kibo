@@ -95,6 +95,7 @@ const Team1 = ({
   );
 };
 
-const Example = () => <Team1 />;
-
-export default Example;
+// Based on https://shadcnblocks.com/block/team1
+export default function TeamExample() {
+  return <Team1 />;
+}

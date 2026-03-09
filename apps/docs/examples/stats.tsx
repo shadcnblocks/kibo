@@ -75,6 +75,7 @@ const Stats8 = ({
   );
 };
 
-const Example = () => <Stats8 />;
-
-export default Example;
+// Based on https://shadcnblocks.com/block/stats8
+export default function StatsExample() {
+  return <Stats8 />;
+}

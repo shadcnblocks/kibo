@@ -6,34 +6,34 @@ import { cn } from "@repo/shadcn-ui/lib/utils";
 import { Alert, AlertDescription, AlertTitle } from "@repo/shadcn-ui/components/ui/alert";
 import { Avatar, AvatarFallback, AvatarImage } from "@repo/shadcn-ui/components/ui/avatar";
 
-const defaultPost = {
-  title: "Designing websites faster with shadcn/ui",
-  authorName: "John Doe",
-  image:
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
-  pubDate: new Date(),
-  description:
-    "A step-by-step guide to building a modern, responsive blog using React and Tailwind CSS.",
-  authorImage:
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-2.webp",
-};
-
-interface BlogPostData {
-  title: string;
-  authorName: string;
-  image: string;
-  pubDate: Date;
-  description: string;
-  authorImage: string;
-}
-
 interface Blogpost1Props {
   className?: string;
-  post?: BlogPostData;
+  title?: string;
+  author?: {
+    name: string;
+    website: string;
+    websiteName: string;
+    image: string;
+  };
+  image?: string;
+  pubDate?: Date;
+  description?: string;
 }
 
-const Blogpost1 = ({ post = defaultPost, className }: Blogpost1Props) => {
-  const { title, authorName, image, pubDate, description, authorImage } = post;
+const Blogpost1 = ({
+  className,
+  title = "Designing websites faster with shadcn/ui",
+  author = {
+    name: "John Doe",
+    website: "https://www.shadcnblocks.com",
+    websiteName: "Shadcnblocks",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-2.webp",
+  },
+  image = "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
+  pubDate = new Date(),
+  description = "A step-by-step guide to building a modern, responsive blog using React and Tailwind CSS.",
+}: Blogpost1Props) => {
   return (
     <section className={cn("py-32", className)}>
       <div className="container">
@@ -44,16 +44,25 @@ const Blogpost1 = ({ post = defaultPost, className }: Blogpost1Props) => {
           <h3 className="max-w-3xl text-lg text-muted-foreground md:text-xl">
             {description}
           </h3>
-          <div className="flex items-center gap-3 text-sm md:text-base">
-            <Avatar className="h-8 w-8 border">
-              <AvatarImage src={authorImage} />
-              <AvatarFallback>{authorName.charAt(0)}</AvatarFallback>
-            </Avatar>
-            <span>
-              <a href="#" className="font-semibold">
-                {authorName}
+          <div className="flex flex-col items-center gap-1 text-sm md:flex-row md:gap-2 md:text-base">
+            <div className="flex items-center gap-2">
+              <Avatar className="h-8 w-8 border">
+                <AvatarImage src={author.image} />
+                <AvatarFallback>{author.name.charAt(0)}</AvatarFallback>
+              </Avatar>
+              <span className="font-semibold">{author.name}</span>
+            </div>
+            <span className="text-muted-foreground">
+              Owner of{" "}
+              <a
+                href={author.website}
+                className="font-semibold text-foreground hover:underline"
+              >
+                {author.websiteName}
               </a>
-              <span className="ml-1">on {format(pubDate, "MMMM d, yyyy")}</span>
+            </span>
+            <span className="text-muted-foreground">
+              Published on {format(pubDate, "MMMM d, yyyy")}
             </span>
           </div>
           <img
@@ -159,6 +168,7 @@ const Blogpost1 = ({ post = defaultPost, className }: Blogpost1Props) => {
   );
 };
 
-const Example = () => <Blogpost1 />;
-
-export default Example;
+// Based on https://shadcnblocks.com/block/blogpost1
+export default function BlogpostExample() {
+  return <Blogpost1 />;
+}

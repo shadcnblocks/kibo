@@ -287,6 +287,6 @@ const Contact = ({
 };
 
 // Based on https://shadcnblocks.com/block/contact2
-const Example = () => <Contact />;
-
-export default Example;
+export default function ContactExample() {
+  return <Contact />;
+}

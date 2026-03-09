@@ -90,6 +90,7 @@ const Faq1 = ({
   );
 };
 
-const Example = () => <Faq1 />;
-
-export default Example;
+// Based on https://shadcnblocks.com/block/faq1
+export default function FaqExample() {
+  return <Faq1 />;
+}

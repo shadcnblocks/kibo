@@ -74,9 +74,9 @@ export const Preview = async ({
   return (
     <div
       className={cn(
-        "size-full overflow-hidden rounded-lg border bg-background not-prose",
-        type === "block" && "h-[48rem] prose-code:border-none prose-code:p-0",
-        type === "component" && " h-[32rem]",
+        "size-full overflow-hidden rounded-lg border bg-background",
+        type === "block" && "h-[48rem]",
+        type === "component" && "h-[32rem]",
         className,
       )}
     >

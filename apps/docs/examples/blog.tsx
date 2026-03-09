@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { cn } from "@repo/shadcn-ui/lib/utils";
 
 import { Badge } from "@repo/shadcn-ui/components/ui/badge";
+
 import {
   Card,
   CardContent,
@@ -22,18 +23,18 @@ interface Post {
 }
 
 interface Blog7Props {
-  tagline?: string;
-  heading?: string;
-  description?: string;
-  buttonText?: string;
-  buttonUrl?: string;
-  posts?: Post[];
+  tagline: string;
+  heading: string;
+  description: string;
+  buttonText: string;
+  buttonUrl: string;
+  posts: Post[];
   className?: string;
 }
 
 const Blog7 = ({
   tagline = "Latest Updates",
-  heading = "Blog Posts",
+  heading = "Blog",
   description = "Discover the latest trends, tips, and best practices in modern web development. From UI components to design systems, stay updated with our expert insights.",
   posts = [
     {
@@ -44,7 +45,7 @@ const Blog7 = ({
       label: "Tutorial",
       author: "Sarah Chen",
       published: "1 Jan 2024",
-      url: "https://shadcnblocks.com",
+      url: "https://www.shadcnblocks.com",
       image:
         "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
     },
@@ -56,7 +57,7 @@ const Blog7 = ({
       label: "Accessibility",
       author: "Marcus Rodriguez",
       published: "1 Jan 2024",
-      url: "https://shadcnblocks.com",
+      url: "#",
       image:
         "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
     },
@@ -68,7 +69,7 @@ const Blog7 = ({
       label: "Design Systems",
       author: "Emma Thompson",
       published: "1 Jan 2024",
-      url: "https://shadcnblocks.com",
+      url: "#",
       image:
         "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
     },
@@ -141,6 +142,7 @@ const Blog7 = ({
   );
 };
 
-const Example = () => <Blog7 />;
-
-export default Example;
+// Based on https://shadcnblocks.com/block/blog7
+export default function BlogExample() {
+  return <Blog7 />;
+}
