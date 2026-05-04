@@ -1,9 +1,9 @@
 # Kibo UI
 
 <div>
-  <img src="https://img.shields.io/npm/dy/kibo-ui" alt="" />
-  <img src="https://img.shields.io/npm/v/kibo-ui" alt="" />
-  <img src="https://img.shields.io/github/license/shadcnblocks/kibo" alt="" />
+  <img src="https://shieldcn.dev/npm/dy/kibo-ui.svg?variant=branded" alt="npm downloads" />
+  <img src="https://shieldcn.dev/npm/v/kibo-ui.svg?variant=branded" alt="npm version" />
+  <img src="https://shieldcn.dev/github/license/shadcnblocks/kibo.svg?variant=branded" alt="license" />
 </div>
 
 ## Overview
