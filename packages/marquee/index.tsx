@@ -6,8 +6,14 @@ import FastMarquee from "react-fast-marquee";
 import { cn } from "@/lib/utils";
 
 export type MarqueeProps = FastMarqueeProps & {
-  fade?: boolean;
+  fade?: boolean | "left" | "right";
 };
+
+const fadeClasses = {
+  left: "mask-l-from-70% mask-l-to-100%",
+  right: "mask-r-from-70% mask-r-to-100%",
+  true: "mask-x-from-70% mask-x-to-100%",
+} as const;
 
 export const Marquee = ({
   className,
@@ -19,7 +25,10 @@ export const Marquee = ({
 }: MarqueeProps) => (
   <FastMarquee
     autoFill={autoFill}
-    className={cn(fade && "mask-x-from-70% mask-x-to-100%", className)}
+    className={cn(
+      fade && fadeClasses[fade === true ? "true" : fade],
+      className
+    )}
     loop={loop}
     pauseOnHover={pauseOnHover}
     {...props}
@@ -29,5 +38,8 @@ export const Marquee = ({
 export type MarqueeItemProps = HTMLAttributes<HTMLDivElement>;
 
 export const MarqueeItem = ({ className, ...props }: MarqueeItemProps) => (
-  <div className={cn("mx-2 flex-shrink-0 object-contain", className)} {...props} />
+  <div
+    className={cn("mx-2 flex-shrink-0 object-contain", className)}
+    {...props}
+  />
 );

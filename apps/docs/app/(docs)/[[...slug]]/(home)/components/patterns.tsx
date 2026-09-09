@@ -391,7 +391,12 @@ export const Patterns = () => (
     <div className="grid gap-4">
       {Object.values(groups).map((items, index) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: "required"
-        <Marquee direction={index === 1 ? 'right' : 'left'} fade key={index} pauseOnHover={false}>
+        <Marquee
+          direction={index === 1 ? "right" : "left"}
+          fade
+          key={index}
+          pauseOnHover={false}
+        >
           {items.map((item) => (
             <MarqueeItem key={item.title}>
               <div className="rounded-lg border bg-card p-6" key={item.title}>
@@ -400,7 +405,9 @@ export const Patterns = () => (
                 </div>
                 <div>
                   <h3 className="font-medium">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                  <p className="text-muted-foreground text-sm">
+                    {item.description}
+                  </p>
                 </div>
               </div>
             </MarqueeItem>
