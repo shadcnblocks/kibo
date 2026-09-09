@@ -9,6 +9,9 @@ export type MarqueeProps = FastMarqueeProps & {
   fade?: boolean | "left" | "right";
 };
 
+// mask-image (not shadcn's scroll-fade) since the marquee never actually
+// scrolls — scroll-fade's animation-timeline: scroll() would fade only one
+// edge, permanently, because scrollLeft stays 0.
 const fadeClasses = {
   left: "mask-l-from-70% mask-l-to-100%",
   right: "mask-r-from-70% mask-r-to-100%",
