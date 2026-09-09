@@ -9,12 +9,7 @@ import {
 } from "@repo/color-picker";
 import { Dropzone, DropzoneContent, DropzoneEmptyState } from "@repo/dropzone";
 import { ImageZoom } from "@repo/image-zoom";
-import {
-  Marquee,
-  MarqueeContent,
-  MarqueeFade,
-  MarqueeItem,
-} from "@repo/marquee";
+import { Marquee, MarqueeItem } from "@repo/marquee";
 import { Button } from "@repo/shadcn-ui/components/ui/button";
 import { cn } from "@repo/shadcn-ui/lib/utils";
 import { ArrowRightIcon, icons, type LucideProps } from "lucide-react";
@@ -110,23 +105,19 @@ const examples = [
     description: marquee?.data.description,
     component: () => (
       <div className="flex aspect-square items-center justify-center overflow-hidden rounded-xl border bg-background">
-        <Marquee>
-          <MarqueeFade side="left" />
-          <MarqueeFade side="right" />
-          <MarqueeContent>
-            {new Array(10).fill(null).map((_, index) => (
-              <MarqueeItem className="h-24 w-24" key={index}>
-                <Image
-                  alt={`Placeholder ${index}`}
-                  className="overflow-hidden rounded-full"
-                  height={96}
-                  src={`https://placehold.co/96x96?random=${index}`}
-                  unoptimized
-                  width={96}
-                />
-              </MarqueeItem>
-            ))}
-          </MarqueeContent>
+        <Marquee fade>
+          {new Array(10).fill(null).map((_, index) => (
+            <MarqueeItem className="h-24 w-24" key={index}>
+              <Image
+                alt={`Placeholder ${index}`}
+                className="overflow-hidden rounded-full"
+                height={96}
+                src={`https://placehold.co/96x96?random=${index}`}
+                unoptimized
+                width={96}
+              />
+            </MarqueeItem>
+          ))}
         </Marquee>
       </div>
     ),
