@@ -5,46 +5,35 @@ import type { MarqueeProps as FastMarqueeProps } from "react-fast-marquee";
 import FastMarquee from "react-fast-marquee";
 import { cn } from "@/lib/utils";
 
-export type MarqueeProps = HTMLAttributes<HTMLDivElement>;
+export type MarqueeProps = FastMarqueeProps & {
+  fade?: boolean | "left" | "right";
+};
 
-export const Marquee = ({ className, ...props }: MarqueeProps) => (
-  <div
-    className={cn("relative w-full overflow-hidden", className)}
-    {...props}
-  />
-);
+// mask-image (not shadcn's scroll-fade) since the marquee never actually
+// scrolls — scroll-fade's animation-timeline: scroll() would fade only one
+// edge, permanently, because scrollLeft stays 0.
+const fadeClasses = {
+  left: "mask-l-from-70% mask-l-to-100%",
+  right: "mask-r-from-70% mask-r-to-100%",
+  true: "mask-x-from-70% mask-x-to-100%",
+} as const;
 
-export type MarqueeContentProps = FastMarqueeProps;
-
-export const MarqueeContent = ({
+export const Marquee = ({
+  className,
+  fade = false,
   loop = 0,
   autoFill = true,
   pauseOnHover = true,
   ...props
-}: MarqueeContentProps) => (
+}: MarqueeProps) => (
   <FastMarquee
     autoFill={autoFill}
-    loop={loop}
-    pauseOnHover={pauseOnHover}
-    {...props}
-  />
-);
-
-export type MarqueeFadeProps = HTMLAttributes<HTMLDivElement> & {
-  side: "left" | "right";
-};
-
-export const MarqueeFade = ({
-  className,
-  side,
-  ...props
-}: MarqueeFadeProps) => (
-  <div
     className={cn(
-      "absolute top-0 bottom-0 z-10 h-full w-24 from-background to-transparent",
-      side === "left" ? "left-0 bg-gradient-to-r" : "right-0 bg-gradient-to-l",
+      fade && fadeClasses[fade === true ? "true" : fade],
       className
     )}
+    loop={loop}
+    pauseOnHover={pauseOnHover}
     {...props}
   />
 );

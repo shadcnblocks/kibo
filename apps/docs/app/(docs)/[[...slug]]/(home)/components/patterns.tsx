@@ -1,9 +1,4 @@
-import {
-  Marquee,
-  MarqueeContent,
-  MarqueeFade,
-  MarqueeItem,
-} from "@repo/marquee";
+import { Marquee, MarqueeItem } from "@repo/marquee";
 import { Button } from "@repo/shadcn-ui/components/ui/button";
 import {
   AlertCircleIcon,
@@ -396,24 +391,27 @@ export const Patterns = () => (
     <div className="grid gap-4">
       {Object.values(groups).map((items, index) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: "required"
-        <Marquee key={index}>
-          <MarqueeFade side="left" />
-          <MarqueeFade side="right" />
-          <MarqueeContent direction={index === 1 ? 'right' : 'left'} pauseOnHover={false}>
-            {items.map((item) => (
-              <MarqueeItem key={item.title}>
-                <div className="rounded-lg border bg-card p-6" key={item.title}>
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-md bg-primary/10">
-                    <item.icon className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium">{item.title}</h3>
-                    <p className="text-muted-foreground text-sm">{item.description}</p>
-                  </div>
+        <Marquee
+          direction={index === 1 ? "right" : "left"}
+          fade
+          key={index}
+          pauseOnHover={false}
+        >
+          {items.map((item) => (
+            <MarqueeItem key={item.title}>
+              <div className="rounded-lg border bg-card p-6" key={item.title}>
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-md bg-primary/10">
+                  <item.icon className="text-primary" />
                 </div>
-              </MarqueeItem>
-            ))}
-          </MarqueeContent>
+                <div>
+                  <h3 className="font-medium">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            </MarqueeItem>
+          ))}
         </Marquee>
       ))}
     </div>

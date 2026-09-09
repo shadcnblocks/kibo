@@ -14,12 +14,7 @@ import {
   AnnouncementTag,
   AnnouncementTitle,
 } from "@repo/announcement";
-import {
-  Marquee,
-  MarqueeContent,
-  MarqueeFade,
-  MarqueeItem,
-} from "@repo/marquee";
+import { Marquee, MarqueeItem } from "@repo/marquee";
 import { Button } from "@repo/shadcn-ui/components/ui/button";
 import {
   VideoPlayer,
@@ -106,18 +101,14 @@ const Example = () => (
         Trusted by developers from leading companies
       </p>
       <div className="flex size-full items-center justify-center">
-        <Marquee>
-          <MarqueeFade className="from-secondary" side="left" />
-          <MarqueeFade className="from-secondary" side="right" />
-          <MarqueeContent pauseOnHover={false}>
-            {logos.map((logo) => (
-              <MarqueeItem className="mx-16 size-12" key={logo.name}>
-                <Link href={logo.url}>
-                  <logo.icon className="size-full" />
-                </Link>
-              </MarqueeItem>
-            ))}
-          </MarqueeContent>
+        <Marquee fade pauseOnHover={false}>
+          {logos.map((logo) => (
+            <MarqueeItem className="mx-16 size-12" key={logo.name}>
+              <Link href={logo.url}>
+                <logo.icon className="size-full" />
+              </Link>
+            </MarqueeItem>
+          ))}
         </Marquee>
       </div>
     </section>

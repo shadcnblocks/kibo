@@ -1,12 +1,7 @@
 import { cn } from "@repo/shadcn-ui/lib/utils";
 
 import { Button } from "@repo/shadcn-ui/components/ui/button";
-import {
-  Marquee,
-  MarqueeContent,
-  MarqueeFade,
-  MarqueeItem,
-} from "@repo/marquee";
+import { Marquee, MarqueeItem } from "@repo/marquee";
 
 interface About3Props {
   className?: string;
@@ -101,23 +96,19 @@ const About3 = ({ className, ...props }: About3Props) => {
         </div>
         {companies && (
           <div className="py-16">
-            <Marquee>
-              <MarqueeContent speed={40}>
-                {companies.map((company, idx) => (
-                  <MarqueeItem
-                    key={company.src + String(idx)}
-                    className="mx-8 flex items-center"
-                  >
-                    <img
-                      src={company.src}
-                      alt={company.alt}
-                      className="h-7 w-auto md:h-8 dark:invert"
-                    />
-                  </MarqueeItem>
-                ))}
-              </MarqueeContent>
-              <MarqueeFade side="left" />
-              <MarqueeFade side="right" />
+            <Marquee fade speed={40}>
+              {companies.map((company, idx) => (
+                <MarqueeItem
+                  key={company.src + String(idx)}
+                  className="mx-8 flex items-center"
+                >
+                  <img
+                    src={company.src}
+                    alt={company.alt}
+                    className="h-7 w-auto md:h-8 dark:invert"
+                  />
+                </MarqueeItem>
+              ))}
             </Marquee>
           </div>
         )}
